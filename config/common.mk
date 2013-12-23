@@ -1,5 +1,8 @@
 PRODUCT_BRAND ?= omni
 
+SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.fml.superuser
+
 # bootanimation
 PRODUCT_COPY_FILES += \
 	vendor/omni/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
@@ -43,6 +46,24 @@ PRODUCT_COPY_FILES += \
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+
+
+ifneq ($(TARGET_BUILD_VARIANT),user)
+
+# Superuser
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=1
+
+else
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=0
+
+endif
 
 # Additional packages
 -include vendor/omni/config/packages.mk
