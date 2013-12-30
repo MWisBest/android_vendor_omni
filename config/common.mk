@@ -15,8 +15,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.android.wifi-watchlist=GoogleGuest \
 	ro.setupwizard.enterprise_mode=1 \
 	ro.com.android.dateformat=MM-dd-yyyy \
-	ro.com.android.dataroaming=false \
-	persist.sys.root_access=1
+	ro.com.android.dataroaming=true
 
 # enable ADB authentication if not on eng build
 ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -34,6 +33,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/omni/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
 	vendor/omni/prebuilt/bin/sysinit:system/bin/sysinit
+
+# FML init.d script
+PRODUCT_COPY_FILES += \
+	vendor/omni/prebuilt/etc/init.d/00fml:system/etc/init.d/00fml
 
 # userinit support
 PRODUCT_COPY_FILES += \
