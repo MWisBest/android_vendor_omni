@@ -36,11 +36,11 @@ PRODUCT_COPY_FILES += \
 
 # FML init.d script
 PRODUCT_COPY_FILES += \
-	vendor/omni/prebuilt/etc/init.d/00fml:system/etc/init.d/00fml
+    vendor/omni/prebuilt/etc/init.d/00fml:system/etc/init.d/00fml
 
 # Gesture Typing Lib for LatinIME
 PRODUCT_COPY_FILES += \
-	vendor/omni/prebuilt/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so
+    vendor/omni/prebuilt/lib/libjni_unbundled_latinimegoogle.so:system/lib/libjni_unbundled_latinimegoogle.so
 
 # userinit support
 PRODUCT_COPY_FILES += \
