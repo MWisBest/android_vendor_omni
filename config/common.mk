@@ -5,17 +5,17 @@ SUPERUSER_PACKAGE_PREFIX := com.android.settings.fml.superuser
 
 # bootanimation
 PRODUCT_COPY_FILES += \
-	vendor/omni/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+    vendor/omni/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
 # general properties
 PRODUCT_PROPERTY_OVERRIDES += \
-	keyguard.no_require_sim=true \
-	ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
-	ro.com.google.clientidbase=android-google \
-	ro.com.android.wifi-watchlist=GoogleGuest \
-	ro.setupwizard.enterprise_mode=1 \
-	ro.com.android.dateformat=MM-dd-yyyy \
-	ro.com.android.dataroaming=true
+    keyguard.no_require_sim=true \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.com.google.clientidbase=android-google \
+    ro.com.android.wifi-watchlist=GoogleGuest \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    ro.com.android.dataroaming=true
 
 # enable ADB authentication if not on eng build
 ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -31,8 +31,8 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-	vendor/omni/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
-	vendor/omni/prebuilt/bin/sysinit:system/bin/sysinit
+    vendor/omni/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/omni/prebuilt/bin/sysinit:system/bin/sysinit
 
 # FML init.d script
 PRODUCT_COPY_FILES += \
@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
 
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
