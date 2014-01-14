@@ -5,8 +5,8 @@ until [ $(busybox pgrep com.android.systemui) ] ; do
     busybox sleep 1
 done
 
-# 525MHz min screen on frequency
-busybox echo 525000 > /sys/devices/system/cpu/cpu0/cpufreq/screen_on_min_freq
+# 350MHz min screen on frequency
+busybox echo 350000 > /sys/devices/system/cpu/cpu0/cpufreq/screen_on_min_freq
 # 700MHz max screen off frequency
 busybox echo 700000 > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq
 # 384MHz GPU frequency
