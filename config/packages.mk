@@ -15,7 +15,6 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     MonthCalendarWidget \
-    OpenDelta \
     OmniSwitch \
     ZeroXBenchmark
 
