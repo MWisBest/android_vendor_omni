@@ -13,8 +13,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     MonthCalendarWidget \
-    OmniSwitch \
-    ZeroXBenchmark
+    OmniSwitch
 
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
