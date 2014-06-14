@@ -3,13 +3,43 @@ PRODUCT_BRAND ?= omni
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.fml.superuser
 
-# bootanimation (Some devices cant go over 100fps for a bootani)
+## Boot animation
+# With FML, use a smaller (file-size) boot animation, and a properly sized one as well.
+ifeq ($(ROM_BUILDTYPE),"FML")
+
+TARGET_BOOTANIMATION_SIZE := $(shell \
+  if [ $(TARGET_SCREEN_WIDTH) -lt $(TARGET_SCREEN_HEIGHT) ]; then \
+    echo $(TARGET_SCREEN_WIDTH); \
+  else \
+    echo $(TARGET_SCREEN_HEIGHT); \
+  fi )
+
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/fml/prebuilt/common/bootanimation/fml))
+bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
+
+define check_and_set_bootanimation
+$(eval TARGET_BOOTANIMATION_NAME := $(shell \
+  if [ -z "$(TARGET_BOOTANIMATION_NAME)" ]; then
+    if [ $(1) -le $(TARGET_BOOTANIMATION_SIZE) ]; then \
+      echo $(1); \
+      exit 0; \
+    fi;
+  fi;
+  echo $(TARGET_BOOTANIMATION_NAME); ))
+endef
+$(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
+PRODUCT_COPY_FILES += \
+    vendor/omni/prebuilt/bootanimation/fml/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+
+else
+# Omni stock
 ifneq ($(USE_LOWFPS_BOOTANI),true)
 PRODUCT_COPY_FILES += \
     vendor/omni/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 else
 PRODUCT_COPY_FILES += \
     vendor/omni/prebuilt/bootanimation/lowfps-bootanimation.zip:system/media/bootanimation.zip
+endif
 endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
