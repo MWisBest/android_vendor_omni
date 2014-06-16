@@ -5,7 +5,7 @@ SUPERUSER_PACKAGE_PREFIX := com.android.settings.fml.superuser
 
 ## Boot animation
 # With FML, use a smaller (file-size) boot animation, and a properly sized one as well.
-ifeq ($(ROM_BUILDTYPE),"FML")
+ifeq ($(ROM_BUILDTYPE),FML)
 
 TARGET_BOOTANIMATION_SIZE := $(shell \
   if [ $(TARGET_SCREEN_WIDTH) -lt $(TARGET_SCREEN_HEIGHT) ]; then \
@@ -14,7 +14,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
     echo $(TARGET_SCREEN_HEIGHT); \
   fi )
 
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/fml/prebuilt/common/bootanimation/fml))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/omni/prebuilt/bootanimation/fml))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 define check_and_set_bootanimation
