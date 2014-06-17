@@ -2,7 +2,8 @@
 PRODUCT_PACKAGES += \
     Basic \
     LatinIME \
-    SoundRecorder
+    SoundRecorder \
+    VoiceDialer
 
 # Additional apps
 PRODUCT_PACKAGES += \
