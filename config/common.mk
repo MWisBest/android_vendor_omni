@@ -96,7 +96,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
-
 ifneq ($(TARGET_BUILD_VARIANT),user)
 
 # Superuser
@@ -113,6 +112,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
 endif
+
+# Dashclock
+PRODUCT_COPY_FILES += \
+    vendor/omni/prebuilt/app/DashClock.apk:system/app/DashClock.apk
 
 # Additional packages
 -include vendor/omni/config/packages.mk
