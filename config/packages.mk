@@ -35,3 +35,7 @@ PRODUCT_PACKAGES += \
     ntfs-3g \
     mkntfs
 
+# Superuser
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
