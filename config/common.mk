@@ -52,12 +52,10 @@ endif
 
 # general properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    keyguard.no_require_sim=true \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
-    ro.com.android.dateformat=MM-dd-yyyy \
-    ro.com.android.dataroaming=true
+    persist.sys.root_access=1
 
 # enable ADB authentication if not on eng build
 ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -111,6 +109,11 @@ else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
+endif
+
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
 endif
 
 # Dashclock
