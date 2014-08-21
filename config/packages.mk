@@ -42,6 +42,7 @@ PRODUCT_PACKAGES += \
 
 ifeq ($(DEBUG_EXTRAS),true)
 PRODUCT_PACKAGES += \
-    memtest
+    memtest \
+    memtester
 endif
 
