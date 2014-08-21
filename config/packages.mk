@@ -39,3 +39,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Superuser \
     su
+
+ifeq ($(DEBUG_EXTRAS),true)
+PRODUCT_PACKAGES += \
+    memtest
+endif
+
