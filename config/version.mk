@@ -12,6 +12,9 @@ endif
 ifdef BUILDTYPE_RELEASE
     ROM_BUILDTYPE := RELEASE
 endif
+ifdef BUILDTYPE_FML
+    ROM_BUILDTYPE := FML
+endif
 
 ifndef ROM_BUILDTYPE
     ROM_BUILDTYPE := HOMEMADE
@@ -19,6 +22,7 @@ endif
 
 TARGET_PRODUCT_SHORT := $(TARGET_PRODUCT)
 TARGET_PRODUCT_SHORT := $(subst omni_,,$(TARGET_PRODUCT_SHORT))
+TARGET_PRODUCT_SHORT := $(subst fml_,,$(TARGET_PRODUCT_SHORT))
 
 # Build the final version string
 ifdef BUILDTYPE_RELEASE

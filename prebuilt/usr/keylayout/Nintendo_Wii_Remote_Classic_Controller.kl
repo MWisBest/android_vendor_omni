@@ -1,0 +1,30 @@
+## Nintendo Wii Remote Extensions ##
+# This includes devices such as the Nunchuck and Classic Controller (Pro)
+
+## DPad
+key 105   DPAD_LEFT
+key 106   DPAD_RIGHT
+key 103   DPAD_UP
+key 108   DPAD_DOWN
+
+## Letter-based buttons
+key 304   BUTTON_A
+key 305   BUTTON_B
+key 307   BUTTON_X
+key 308   BUTTON_Y
+key 306   BUTTON_C
+key 309   BUTTON_Z
+
+## Triggers
+key 310   BUTTON_L1
+key 311   BUTTON_R1
+key 312   BUTTON_L2
+key 313   BUTTON_R2
+
+## - & +
+key 412   BUTTON_15
+key 407   BUTTON_16
+
+## Home
+key 316   BUTTON_MODE
+

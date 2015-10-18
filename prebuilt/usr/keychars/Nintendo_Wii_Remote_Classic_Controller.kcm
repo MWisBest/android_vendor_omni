@@ -1,0 +1,51 @@
+## Nintendo Wii Remote Extensions ##
+# This includes devices such as the Nunchuck and Classic Controller (Pro)
+
+type SPECIAL_FUNCTION
+
+## Letter-based buttons
+key BUTTON_A {
+    base:                               fallback DPAD_CENTER
+}
+key BUTTON_B {
+    base:                               fallback BACK
+}
+key BUTTON_X {
+    base:                               fallback MENU
+}
+key BUTTON_Y {
+    base:                               fallback SPACE
+}
+key BUTTON_C {
+    base:                               fallback DPAD_CENTER
+}
+key BUTTON_Z {
+    base:                               fallback DEL
+}
+
+## Triggers
+key BUTTON_L1 {
+    base:                               none
+}
+key BUTTON_R1 {
+    base:                               none
+}
+key BUTTON_L2 {
+    base:                               none
+}
+key BUTTON_R2 {
+    base:                               none
+}
+
+## - & +
+key BUTTON_15 {
+    base:                               fallback MEDIA_PREVIOUS
+}
+key BUTTON_16 {
+    base:                               fallback MEDIA_NEXT
+}
+
+## Home
+key BUTTON_MODE {
+    base:                               fallback MEDIA_PLAY_PAUSE
+}

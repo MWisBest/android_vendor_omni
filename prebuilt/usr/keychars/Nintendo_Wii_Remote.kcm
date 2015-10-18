@@ -1,0 +1,32 @@
+## Nintendo Wii Remote ##
+
+type SPECIAL_FUNCTION
+
+## Letter-based buttons
+key BUTTON_A {
+    base:                               fallback DPAD_CENTER
+}
+key BUTTON_B {
+    base:                               fallback BACK
+}
+
+## 1 & 2
+key BUTTON_1 {
+    base:                               fallback VOLUME_UP
+}
+key BUTTON_2 {
+    base:                               fallback VOLUME_DOWN
+}
+
+## - and +
+key BUTTON_15 {
+    base:                               fallback MEDIA_PREVIOUS
+}
+key BUTTON_16 {
+    base:                               fallback MEDIA_NEXT
+}
+
+## Home
+key BUTTON_MODE {
+    base:                               fallback MEDIA_PLAY_PAUSE
+}

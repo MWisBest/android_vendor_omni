@@ -26,7 +26,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # enable ADB authentication if not on eng build
 ifneq ($(TARGET_BUILD_VARIANT),eng)
+ifneq ($(TARGET_BUILD_VARIANT),userdebug)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+endif
 endif
 
 # Backup Tool

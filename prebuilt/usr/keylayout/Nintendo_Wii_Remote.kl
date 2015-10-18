@@ -1,0 +1,22 @@
+## Nintendo Wii Remote ##
+
+## DPad
+key 105   DPAD_LEFT
+key 106   DPAD_RIGHT
+key 103   DPAD_UP
+key 108   DPAD_DOWN
+
+## Letter-based buttons
+key 304   BUTTON_A
+key 305   BUTTON_B
+
+## 1 & 2
+key 257   BUTTON_1
+key 258   BUTTON_2
+
+## - & +
+key 412   BUTTON_15
+key 407   BUTTON_16
+
+## Home
+key 316   BUTTON_MODE
